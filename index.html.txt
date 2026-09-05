@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prapaporn Phanthong - Online Resume</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-dark: #1d4ed8;
+            --primary-light: #eff6ff;
+            --text-dark: #0f172a;
+            --text-muted: #475569;
+            --bg-body: #f8fafc;
+            --bg-card: #ffffff;
+            --border-color: #e2e8f0;
+            --radius: 16px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+            border: 1px solid var(--border-color);
+            overflow: hidden;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            color: #ffffff;
+            padding: 50px 40px;
+            display: flex;
+            align-items: center;
+            gap: 32px;
+            position: relative;
+        }
+
+        .avatar {
+            width: 110px;
+            height: 110px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: #ffffff;
+            flex-shrink: 0;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .header-info h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 4px; }
+        .header-info .title { color: #93c5fd; font-size: 1.1rem; font-weight: 500; margin-bottom: 16px; }
+        .contact-info { display: flex; flex-wrap: wrap; gap: 16px; font-size: 0.9rem; color: #cbd5e1; }
+        .contact-item { display: flex; align-items: center; gap: 6px; }
+
+        /* Actions */
+        .action-bar {
+            padding: 16px 40px;
+            background: #f1f5f9;
+            border-bottom: 1px solid var(--border-color);
+            display: flex;
+            justify-content: flex-end;
+        }
+        .btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .btn:hover { background: var(--primary-dark); }
+
+        /* Content Sections */
+        .main-content { padding: 40px; display: flex; flex-direction: column; gap: 36px; }
+        .section-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--primary);
+            padding-bottom: 8px;
+            border-bottom: 2px solid var(--primary-light);
+            margin-bottom: 20px;
+        }
+
+        /* Experience & Education Timelines */
+        .timeline-item { margin-bottom: 24px; }
+        .timeline-item:last-child { margin-bottom: 0; }
+        .job-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+        .job-title { font-size: 1.1rem; font-weight: 700; }
+        .company { color: var(--primary); font-weight: 600; }
+        .date { font-size: 0.875rem; color: var(--text-muted); font-weight: 500; }
+        .description { color: var(--text-muted); font-size: 0.95rem; }
+        .description ul { margin-left: 20px; margin-top: 8px; }
+
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+        .skill-card {
+            background: var(--bg-body);
+            padding: 16px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+        }
+        .skill-card h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; color: var(--text-dark); }
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; }
+        .tag {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body { padding: 12px; }
+            .header { flex-direction: column; text-align: center; padding: 30px 20px; }
+            .contact-info { justify-content: center; }
+            .job-header { flex-direction: column; align-items: flex-start; gap: 4px; }
+            .main-content { padding: 24px 20px; }
+            .action-bar { justify-content: center; }
+        }
+
+        /* Print Styling */
+        @media print {
+            body { padding: 0; background: white; }
+            .container { box-shadow: none; border: none; }
+            .action-bar { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="avatar">PP</div>
+            <div class="header-info">
+                <h1>Prapaporn Phanthong</h1>
+                <div class="title">Senior UX/UI Designer & Front-End Developer</div>
+                <div class="contact-info">
+                    <span class="contact-item">📍 Bangkok, Thailand</span>
+                    <span class="contact-item">✉️ prapaporn.p@example.com</span>
+                    <span class="contact-item">📞 +66 81 234 5678</span>
+                    <span class="contact-item">🌐 linkedin.com/in/prapaporn</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Actions -->
+        <div class="action-bar">
+            <button class="btn" onclick="window.print()">🖨️ Print / Save as PDF</button>
+        </div>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Profile -->
+            <section>
+                <h2 class="section-title">Profile Statement</h2>
+                <p class="description">
+                    Innovative and detail-oriented Senior UX/UI Designer & Front-End Developer with over 5 years of experience crafting intuitive digital products and scalable user interfaces. Passionate about bridging the gap between design systems and clean code to build seamless digital experiences.
+                </p>
+            </section>
+
+            <!-- Experience -->
+            <section>
+                <h2 class="section-title">Work Experience</h2>
+                
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <span class="job-title"><span class="company">TechInnovate Solutions</span> — Senior UX/UI Designer</span>
+                        <span class="date">2022 - Present</span>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>Led redesign of core SaaS platform, increasing user engagement by 35%.</li>
+                            <li>Created scalable Figma design systems used across web and mobile platforms.</li>
+                            <li>Collaborated directly with engineers using HTML, CSS, and React for pixel-perfect implementations.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <span class="job-title"><span class="company">Creative Digital Agency</span> — UX/UI Designer</span>
+                        <span class="date">2019 - 2022</span>
+                    </div>
+                    <div class="description">
+                        <ul>
+                            <li>Conducted user research, wireframing, and usability testing for enterprise clients.</li>
+                            <li>Developed responsive HTML/CSS/JS landing pages with optimized performance.</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Skills -->
+            <section>
+                <h2 class="section-title">Skills & Expertise</h2>
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <h4>UX/UI Design</h4>
+                        <div class="tags">
+                            <span class="tag">Figma</span>
+                            <span class="tag">Wireframing</span>
+                            <span class="tag">Design Systems</span>
+                            <span class="tag">User Testing</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Front-End Dev</h4>
+                        <div class="tags">
+                            <span class="tag">HTML5</span>
+                            <span class="tag">CSS3/Sass</span>
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">React</span>
+                        </div>
+                    </div>
+                    <div class="skill-card">
+                        <h4>Tools & Methods</h4>
+                        <div class="tags">
+                            <span class="tag">Git / GitHub</span>
+                            <span class="tag">Agile / Scrum</span>
+                            <span class="tag">Responsive Web</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Education -->
+            <section>
+                <h2 class="section-title">Education</h2>
+                <div class="timeline-item">
+                    <div class="job-header">
+                        <span class="job-title">Bachelor of Science in Information Technology</span>
+                        <span class="date">2015 - 2019</span>
+                    </div>
+                    <p class="description">King Mongkut's Institute of Technology Ladkrabang (KMITL)</p>
+                </div>
+            </section>
+
+            <!-- Interests -->
+            <section>
+                <h2 class="section-title">Interests & Hobbies</h2>
+                <p class="description">🎨 Digital Painting & Illustration | 🎧 Podcast Production | 🎬 Sci-Fi Movies & Cinema</p>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
